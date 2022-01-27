@@ -1,4 +1,5 @@
 import placeholderImg from './assets/placeholder.png';
+import audioUrl from './assets/notification.mp3';
 
 async function getLastMem(): Promise<void> {
   const response = await fetch('/api/memes/last/');
@@ -18,6 +19,7 @@ async function getLastMem(): Promise<void> {
 
   const prevSrc = elem.getAttribute('src');
   if (prevSrc !== imageUrl) {
+    playSound();
     elem.setAttribute('src', imageUrl);
   }
 }
@@ -65,3 +67,9 @@ function getHeading(): void {
 
 setInterval(getHeading, 200);
 setInterval(getLastMem, 1000);
+setInterval(playSound, 10000);
+
+function playSound(): void {
+  const audio = new Audio(audioUrl);
+  audio.play();
+}
