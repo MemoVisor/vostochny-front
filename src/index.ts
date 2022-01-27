@@ -1,6 +1,8 @@
+import placeholderImg from './assets/placeholder.jpg';
+
 async function getLastMem(): Promise<void> {
   const response = await fetch('/api/memes/last/');
-  let imageUrl = './assets/placeholder.jpg';
+  let imageUrl = placeholderImg;
   try {
     const data: {url: string;} = await response.json();
     imageUrl = data.url;

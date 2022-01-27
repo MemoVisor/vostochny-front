@@ -8,12 +8,14 @@ const outDir = resolve(__dirname, 'dist');
 export default defineConfig({
   root,
   plugins: [],
+  base: '/vostochny-front/',
   build: {
     outDir,
     emptyOutDir: true,
     rollupOptions: {
       input: [
         resolve(root, 'index.html'),
+        resolve(root, '404.html'),
       ]
     }
   }
