@@ -1,4 +1,4 @@
-import placeholderImg from './assets/placeholder.jpg';
+import placeholderImg from './assets/placeholder.png';
 
 async function getLastMem(): Promise<void> {
   const response = await fetch('/api/memes/last/');
