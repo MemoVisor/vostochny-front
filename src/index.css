@@ -28,3 +28,12 @@ body {
   max-height: 80vh;
   object-fit: contain;
 }
+
+.circle {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: rgb(44, 90, 216);
+}
+
