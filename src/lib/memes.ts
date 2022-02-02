@@ -3,10 +3,10 @@ import placeholderImg from '../assets/placeholder.png';
 import { playSound } from './notifications';
 
 export async function getLastMeme(): Promise<void> {
-  const response = await fetch('http://memovisor.saritasa.io/api/memes/last/');
   let imageUrl = placeholderImg;
   try {
-    const data: {url: string;} = await response.json();
+    const response = await fetch('http://memovisor.saritasa.io/api/memes/last/');
+    const data: { url: string; } = await response.json();
     imageUrl = data.url;
   } catch (error: unknown) {
     // console.error(error);
