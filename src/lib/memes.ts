@@ -5,7 +5,7 @@ import { playSound } from './notifications';
 export async function getLastMeme(): Promise<void> {
   let imageUrl = placeholderImg;
   try {
-    const response = await fetch('http://memovisor.saritasa.io/api/memes/last/');
+    const response = await fetch('https://memovisor.saritasa.io/');
     const data: { url: string; } = await response.json();
     imageUrl = data.url;
   } catch (error: unknown) {
